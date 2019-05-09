@@ -1,0 +1,17 @@
+version: "2"
+services:
+  connect:
+    #build: .
+    image: flinox/mega_acertator
+    hostname: mega_acertator
+    container_name: mega_acertator
+    # ports:
+    #   - "8000:8000"
+    volumes:
+      - ./mega:/go/src/mega
+    environment:
+      GOPATH: /go
+    working_dir: /go/src/mega
+    command: > 
+      sh -c "go run /go/src/mega/main.go"
+
